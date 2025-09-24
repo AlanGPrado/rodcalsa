@@ -1,10 +1,10 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Home from "./assets/presentation/pages/Home";
-import Contact from "./assets/presentation/pages/Contact";
-import Projects from "./assets/presentation/pages/Projects";
-import Property from "./assets/presentation/pages/Property";
-import About from "./assets/presentation/pages/About";
-import Services from "./assets/presentation/pages/Services";
+import Home from "./presentation/pages/Home";
+import Contact from "./presentation/pages/Contact";
+import Projects from "./presentation/pages/Projects";
+import Property from "./presentation/pages/Property";
+import About from "./presentation/pages/About";
+import Services from "./presentation/pages/Services";
 import './App.css';
 import './index.css';
 
