@@ -40,8 +40,8 @@ import Property_4_14 from '../images/proyecto_4/pic_14.jpeg';
 // Proyecto 5
 import Property_5 from '../images/proyecto_5/pic_1.jpeg';
 import Property_5_2 from '../images/proyecto_5/pic_2.jpeg';
-import Property_5_3 from '../images/proyecto_5/pic_3.jpg';
-import Property_5_4 from '../images/proyecto_5/pic_4.jpg';
+import Property_5_3 from '../images/proyecto_5/pic_3.jpeg';
+import Property_5_4 from '../images/proyecto_5/pic_4.jpeg';
 import Property_5_5 from '../images/proyecto_5/pic_5.jpeg';
 import Property_5_6 from '../images/proyecto_5/pic_6.jpeg';
 import Property_5_7 from '../images/proyecto_5/pic_7.jpeg';
@@ -52,7 +52,7 @@ import Property_5_11 from '../images/proyecto_5/pic_11.jpeg';
 import Property_5_12 from '../images/proyecto_5/pic_12.jpeg';
 import Property_5_13 from '../images/proyecto_5/pic_13.jpeg';
 import Property_5_14 from '../images/proyecto_5/pic_14.jpeg';
-import Property_5_15 from '../images/proyecto_5/pic_15.jpg';
+import Property_5_15 from '../images/proyecto_5/pic_15.jpeg';
 
 // Proyecto 6
 import Property_6 from '../images/proyecto_6/pic_1.jpeg';
