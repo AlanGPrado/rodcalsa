@@ -141,7 +141,7 @@ export default function Header() {
             className="md:hidden bg-white border-t border-gray-200 shadow-sm"
           >
             <nav className="flex flex-col p-4 space-y-3 text-gray-800 font-semibold">
-              <Link to="/inicio" onClick={() => setOpenNav(false)}>Inicio</Link>
+              <Link to="/" onClick={() => setOpenNav(false)}>Inicio</Link>
               <Link to="/nosotros" onClick={() => setOpenNav(false)}>Nosotros</Link>
               <Link to="/servicios" onClick={() => setOpenNav(false)}>Servicios</Link>
               <Link to="/proyectos" onClick={() => setOpenNav(false)}>Proyectos</Link>
