@@ -1,0 +1,217 @@
+// import { useEffect, useState } from "react";
+// import { X, ChevronLeft, ChevronRight, Home, Wallet } from "lucide-react";
+// import { motion } from "framer-motion";
+
+// import Casa3 from "../assets/images/casa_3.jpg";
+// import Collage1 from "../assets/images/casa_1.jpg";
+// import Collage2 from "../assets/images/casa_2.jpg";
+// import Collage3 from "../assets/images/casa_3.jpg";
+// import Collage4 from "../assets/images/casa_1.jpg";
+
+// import House from "../assets/images/casa_rocalsa_1.jpeg";
+// import House2 from "../assets/images/casa_rocalsa_2.jpeg";
+// import Storage from "../assets/images/almacen_rocalsa_1.jpeg";
+// import Storage2 from "../assets/images/almacen_rocalsa_2.jpeg";
+
+// import Header from "../components/Header";
+// import Footer from "../components/Footer";
+
+// const projects = [
+//     { title: "Casa Moderno", image: House, link: "/property/1" },
+//     { title: "Almacén Industrial", image: Storage, link: "/projects/almacen-industrial" },
+//     { title: "Casa Minimalista", image: House2, link: "/projects/casa-minimalista" },
+//     { title: "Almacén Logístico", image: Storage2, link: "/projects/almacen-logistico" },
+// ];
+
+// export default function Property() {
+//     const collageImages = [Collage1, Collage2, Collage3, Collage4];
+//     const [isOpen, setIsOpen] = useState(false);
+//     const [currentIndex, setCurrentIndex] = useState(0);
+
+//     const openModal = (index: number) => {
+//         setCurrentIndex(index);
+//         setIsOpen(true);
+//     };
+
+//     const closeModal = () => setIsOpen(false);
+
+//     const prevImage = () =>
+//         setCurrentIndex((prev) => (prev === 0 ? collageImages.length - 1 : prev - 1));
+
+//     const nextImage = () =>
+//         setCurrentIndex((prev) => (prev === collageImages.length - 1 ? 0 : prev + 1));
+
+//     useEffect(() => {
+//         window.scrollTo(0, 0);
+//     }, []);
+//     return (
+//         <main>
+//             <Header />
+//             <div className="w-full">
+//                 {/* Imagen principal */}
+//                 <div className="relative w-full h-[400px] md:h-[650px] overflow-hidden">
+//                     <img
+//                         src={Casa3}
+//                         alt="Propiedad principal"
+//                         className="w-full h-full object-cover"
+//                     />
+//                     <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/50 flex flex-col items-center justify-center text-center px-6">
+//                         <motion.h2
+//                             initial={{ opacity: 0, y: 15 }}
+//                             animate={{ opacity: 1, y: 0 }}
+//                             transition={{ duration: 1.4, ease: "easeOut" }}
+//                             className="text-white text-3xl md:text-5xl lg:text-5xl font-extrabold leading-tight drop-shadow-2xl"
+//                         >
+//                             Propiedad de Ensueño
+//                         </motion.h2>
+//                     </div>
+//                 </div>
+
+//                 {/* Texto descriptivo */}
+//                 <div className="max-w-4xl mx-auto px-6 py-12 text-center">
+//                     <h3 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4">
+//                         Propiedad Única en su Estilo
+//                     </h3>
+//                     <p className="text-lg text-gray-600 leading-relaxed text-left">
+//                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
+//                         dapibus justo vitae elit faucibus, in tincidunt nisl tincidunt. Duis
+//                         condimentum lectus nec risus lacinia, sed consequat magna suscipit.
+//                         Aliquam erat volutpat. Curabitur ut tellus nec sapien tincidunt
+//                         placerat. Proin maximus, erat ut faucibus eleifend, sapien nulla
+//                         vehicula nisl, ut pretium lorem mauris in velit.
+//                     </p>
+//                 </div>
+
+//                 {/* Collage de imágenes con hover zoom */}
+//                 <div className="grid grid-cols-2 grid-rows-2 w-[80%] h-[500px] m-auto">
+//                     {collageImages.map((img, idx) => (
+//                         <div
+//                             key={idx}
+//                             className="w-full h-full overflow-hidden cursor-pointer"
+//                             onClick={() => openModal(idx)}
+//                         >
+//                             <img
+//                                 src={img}
+//                                 alt={`Collage ${idx + 1}`}
+//                                 className="w-full h-full object-cover transform transition duration-500 ease-in-out hover:scale-105"
+//                             />
+//                         </div>
+//                     ))}
+//                 </div>
+
+//                 {/* Sección con íconos */}
+//                 <div className="max-w-5xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-2 gap-10">
+//                     <motion.div
+//                         initial={{ opacity: 0, y: 20 }}
+//                         whileInView={{ opacity: 1, y: 0 }}
+//                         transition={{ duration: 0.8 }}
+//                         viewport={{ once: true }}
+//                         className="flex items-center space-x-4 p-6 bg-white shadow-lg rounded-xl"
+//                     >
+//                         <Home className="text-[#EF9314] w-12 h-12" />
+//                         <div>
+//                             <h4 className="text-xl font-semibold text-gray-800">Dimensiones</h4>
+//                             <p className="text-gray-600">Área total: 350 m²</p>
+//                         </div>
+//                     </motion.div>
+//                     <motion.div
+//                         initial={{ opacity: 0, y: 20 }}
+//                         whileInView={{ opacity: 1, y: 0 }}
+//                         transition={{ duration: 1 }}
+//                         viewport={{ once: true }}
+//                         className="flex items-center space-x-4 p-6 bg-white shadow-lg rounded-xl"
+//                     >
+//                         <Home className="text-[#EF9314] w-12 h-12" />
+//                         <div>
+//                             <h4 className="text-xl font-semibold text-gray-800">Ciudad</h4>
+//                             <p className="text-gray-600">Tampico, Tamps.</p>
+//                         </div>
+//                     </motion.div>
+//                 </div>
+
+//                 {/* Otros Proyectos */}
+//                 <div className="bg-gray-100 py-16">
+//                     <div className="max-w-6xl mx-auto px-6">
+//                         <h3 className="text-3xl font-bold text-gray-800 mb-8">
+//                             Otros Proyectos
+//                         </h3>
+//                         <div className="max-w-6xl mx-auto px-6 py-8 grid grid-cols-2 sm:grid-cols-4 gap-4">
+//                             {projects.map((project, idx) => (
+//                                 <motion.div
+//                                     key={idx}
+//                                     initial={{ opacity: 0, y: 30 }}
+//                                     whileInView={{ opacity: 1, y: 0 }}
+//                                     transition={{ duration: 0.6, delay: idx * 0.2 }}
+//                                     viewport={{ once: true }}
+//                                     className="w-full bg-white shadow-lg overflow-hidden cursor-pointer relative flex flex-col rounded-sm"
+//                                 >
+//                                     <a href={project.link} className="block w-full h-[200px] sm:h-[250px] relative">
+//                                         {/* Fondo blurred */}
+//                                         <img
+//                                             src={project.image}
+//                                             alt={`Blur fondo ${idx + 1}`}
+//                                             className="absolute inset-0 w-full h-full object-cover blur-lg scale-110"
+//                                             aria-hidden="true"
+//                                         />
+
+//                                         {/* Imagen principal centrada */}
+//                                         <img
+//                                             src={project.image}
+//                                             alt={project.title}
+//                                             className="relative z-20 w-full h-full object-contain transition-transform duration-300 hover:scale-105"
+//                                         />
+//                                     </a>
+
+//                                     {/* Nombre de la propiedad sobre fondo sólido */}
+//                                     <div className="relative z-30 bg-[#3C3C3C] text-white text-center py-4 flex items-center justify-center h-20">
+//                                         ◦ {project.title} ◦
+//                                     </div>
+//                                 </motion.div>
+//                             ))}
+//                         </div>
+
+
+//                     </div>
+//                 </div>
+//             </div>
+
+//             <Footer />
+
+//             {/* Modal de galería */}
+//             {isOpen && (
+//                 <div className="fixed inset-0 bg-black/90 flex items-center justify-center z-50">
+//                     {/* Botón cerrar */}
+//                     <button
+//                         onClick={closeModal}
+//                         className="absolute top-5 right-5 text-white bg-black/60 p-2 rounded-full"
+//                     >
+//                         <X size={28} />
+//                     </button>
+
+//                     {/* Flecha izquierda */}
+//                     <button
+//                         onClick={prevImage}
+//                         className="absolute left-5 text-white bg-black/60 p-3 rounded-full"
+//                     >
+//                         <ChevronLeft size={28} />
+//                     </button>
+
+//                     {/* Imagen principal */}
+//                     <img
+//                         src={collageImages[currentIndex]}
+//                         alt={`Imagen ${currentIndex + 1}`}
+//                         className="max-w-[90%] max-h-[80%] object-contain rounded-lg shadow-lg"
+//                     />
+
+//                     {/* Flecha derecha */}f
+//                     <button
+//                         onClick={nextImage}
+//                         className="absolute right-5 text-white bg-black/60 p-3 rounded-full"
+//                     >
+//                         <ChevronRight size={28} />
+//                     </button>
+//                 </div>
+//             )}
+//         </main>
+//     );
+// }
