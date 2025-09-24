@@ -1,5 +1,3 @@
-// src/assets/data/projectsData.ts
-
 // Proyecto 1
 import Property_1 from '../images/proyecto_1/pic_1.jpeg';
 import Property_1_2 from '../images/proyecto_1/pic_2.jpeg';
