@@ -16,8 +16,21 @@ export default function Property() {
 
     // Estado para el carrusel de "Otros Proyectos"
     const [currentSlide, setCurrentSlide] = useState(0);
-    const projectsPerSlide = 4;
+    const [projectsPerSlide, setProjectsPerSlide] = useState(1);
     const totalSlides = Math.ceil(projects.length / projectsPerSlide);
+
+    useEffect(() => {
+        const updateSlides = () => {
+            if (window.innerWidth >= 1280) setProjectsPerSlide(4);
+            else if (window.innerWidth >= 1024) setProjectsPerSlide(3);
+            else if (window.innerWidth >= 640) setProjectsPerSlide(2);
+            else setProjectsPerSlide(1);
+        };
+
+        updateSlides();
+        window.addEventListener("resize", updateSlides);
+        return () => window.removeEventListener("resize", updateSlides);
+    }, []);
 
     useEffect(() => {
         // Extraer el id de la URL: /property/1 → 1
@@ -163,13 +176,16 @@ export default function Property() {
                 </div>
 
                 {/* Otros Proyectos */}
+                {/* Otros Proyectos */}
                 <div className="bg-gray-100 py-16">
                     <div className="max-w-6xl mx-auto px-6">
                         <h3 className="text-3xl font-bold text-gray-800 mb-8">Otros Proyectos</h3>
                         <section className="relative max-w-6xl mx-auto px-6 py-8 overflow-hidden">
                             <div
                                 className="flex transition-transform duration-700 ease-in-out"
-                                style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+                                style={{
+                                    transform: `translateX(-${currentSlide * (100 / projectsPerSlide)}%)`,
+                                }}
                             >
                                 {projects.map((project, idx) => (
                                     <motion.div
@@ -178,7 +194,8 @@ export default function Property() {
                                         whileInView={{ opacity: 1, y: 0 }}
                                         transition={{ duration: 0.6, delay: idx * 0.2 }}
                                         viewport={{ once: true }}
-                                        className="min-w-[calc(100%/4)] px-2"
+                                        className="px-2"
+                                        style={{ minWidth: `${100 / projectsPerSlide}%` }}
                                     >
                                         <div className="w-full bg-white shadow-lg overflow-hidden cursor-pointer relative flex flex-col rounded-sm">
                                             <a
@@ -222,6 +239,7 @@ export default function Property() {
                         </section>
                     </div>
                 </div>
+
             </div>
 
             <Footer />
