@@ -32,10 +32,12 @@ export default function NuestroPlus() {
           {plusItems.map((item, idx) => (
             <motion.div
               key={idx}
-              className="flex items-start gap-4 bg-gray-50 rounded-xl p-6 shadow-md hover:shadow-lg transition"
+              className="flex items-start gap-4 bg-gray-50 rounded-xl p-6 shadow-md hover:shadow-lg transition transform-gpu"
+              style={{ willChange: "transform, opacity" }}
+              layout="position"
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: idx * 0.2 }}
+              transition={{ duration: 0.4, ease: "easeOut" }}
               viewport={{ once: true }}
             >
               <div className="w-6 h-6 flex-shrink-0 mt-1">
