@@ -16,7 +16,7 @@ export default function NuestroPlus() {
           className="text-center mb-16"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
           viewport={{ once: true }}
         >
           <h2 className="text-4xl md:text-5xl font-bold text-gray-800">
@@ -34,10 +34,9 @@ export default function NuestroPlus() {
               key={idx}
               className="flex items-start gap-4 bg-gray-50 rounded-xl p-6 shadow-md hover:shadow-lg transition transform-gpu"
               style={{ willChange: "transform, opacity" }}
-              layout="position"
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.4, ease: "easeOut" }}
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, ease: "easeOut", delay: idx * 0.15 }}
               viewport={{ once: true }}
             >
               <div className="w-6 h-6 flex-shrink-0 mt-1">

@@ -148,11 +148,12 @@ export default function Property() {
                 {/* Sección con íconos */}
                 <div className="max-w-5xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-2 gap-10">
                     <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8 }}
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.5, ease: "easeOut", delay: 0 }}
                         viewport={{ once: true }}
-                        className="flex items-center space-x-4 p-6 bg-white shadow-lg rounded-xl"
+                        className="flex items-center space-x-4 p-6 bg-white shadow-lg rounded-xl transform-gpu"
+                        style={{ willChange: "transform, opacity" }}
                     >
                         <Home className="text-[#EF9314] w-12 h-12" />
                         <div>
@@ -160,12 +161,14 @@ export default function Property() {
                             <p className="text-gray-600">Área total: 350 m²</p>
                         </div>
                     </motion.div>
+
                     <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 1 }}
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.5, ease: "easeOut", delay: 0.15 }}
                         viewport={{ once: true }}
-                        className="flex items-center space-x-4 p-6 bg-white shadow-lg rounded-xl"
+                        className="flex items-center space-x-4 p-6 bg-white shadow-lg rounded-xl transform-gpu"
+                        style={{ willChange: "transform, opacity" }}
                     >
                         <Home className="text-[#EF9314] w-12 h-12" />
                         <div>
@@ -175,7 +178,7 @@ export default function Property() {
                     </motion.div>
                 </div>
 
-                {/* Otros Proyectos */}
+
                 {/* Otros Proyectos */}
                 <div className="bg-gray-100 py-16">
                     <div className="max-w-6xl mx-auto px-6">
