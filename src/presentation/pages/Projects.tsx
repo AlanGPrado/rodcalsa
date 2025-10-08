@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { useEffect } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -21,21 +20,17 @@ export default function ProjectCards() {
                             Proyectos <span className="text-[#EF9314]">Realizados</span>
                         </h2>
                         <p className="mt-4 text-gray-600 text-lg">
-                            Casas y almacenes destacados con fotos y descripción corta.
+                            Explora nuestras casas y almacenes más destacados.
                         </p>
                     </div>
 
                     {/* Grid 2x2 */}
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                         {projects.map((project, idx) => (
-                            <motion.div
+                            <div
                                 key={idx}
-                                initial={{ opacity: 0, y: 30 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.6, delay: idx * 0.2 }}
-                                viewport={{ once: false, amount: 0.2 }}
-                                className="bg-white rounded-sm shadow-lg overflow-hidden hover:shadow-2xl transition cursor-pointer"
+                                className="bg-white rounded-sm shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 cursor-pointer opacity-0 translate-y-6 animate-fadeIn"
+                                style={{ animationDelay: `${idx * 0.2}s` }}
                             >
                                 {/* Imagen */}
                                 <Link to={String(project.link)} className="block overflow-hidden">
@@ -49,13 +44,13 @@ export default function ProjectCards() {
                                 {/* Info */}
                                 <div className="p-6 bg-[#3C3C3C]">
                                     {project.location && (
-                                        <p className="text-xs text-[#f9f9f9] opacity-[0.7]">{project.location}</p>
+                                        <p className="text-xs text-[#f9f9f9] opacity-70">{project.location}</p>
                                     )}
                                     <h3 className="text-xl font-semibold text-white mt-1">
                                         <Link to={String(project.link)}>{project.title}</Link>
                                     </h3>
                                 </div>
-                            </motion.div>
+                            </div>
                         ))}
                     </div>
                 </div>

@@ -124,26 +124,45 @@ export default function Property() {
                 </motion.div>
 
                 {/* Collage de imágenes con hover zoom */}
+
                 <div className="grid grid-cols-2 gap-0 w-[80%] m-auto">
-                    {currentProject.images.map((img, idx) => (
-                        <div
-                            key={idx}
-                            className="h-[250px] overflow-hidden cursor-pointer"
-                            onClick={() => openModal(idx)}
-                        >
-                            <img
-                                src={img}
-                                alt={`Imagen ${idx + 1}`}
-                                className="w-full h-full object-cover transform transition duration-500 ease-in-out hover:scale-105"
+                    {currentProject.images.map((img, idx) => {
+                        const isLastOdd = currentProject.images.length % 2 !== 0 && idx === currentProject.images.length - 1;
+                        return (
+                            <div
+                                key={idx}
+                                className={`h-[250px] overflow-hidden cursor-pointer ${isLastOdd ? "col-span-2" : ""}`}
+                                onClick={() => openModal(idx)}
+                            >
+                                <img
+                                    src={img}
+                                    alt={`Imagen ${idx + 1}`}
+                                    className="w-full h-full object-cover transform transition duration-500 ease-in-out hover:scale-105"
+                                />
+                            </div>
+                        );
+                    })}
+                </div>
+                {/* Video independiente para property/4 */}
+                {location.pathname === "/property/4" && currentProject.video && (
+
+                    <div className="w-full mb-8 flex justify-center flex-col items-center">
+                        <br />
+                        <br />
+                        <div className="w-full max-w-md h-[400px] md:h-[600px] overflow-hidden">
+                            <video
+                                src={currentProject.video}
+                                className="w-full h-full object-contain"
+                                controls
+                                loop
+                                muted
+                                playsInline
                             />
                         </div>
-                    ))}
+                    </div>
+                )}
 
-                    {/* Relleno si son impares */}
-                    {currentProject.images.length % 2 !== 0 && (
-                        <div className="h-[250px] bg-gray-100" />
-                    )}
-                </div>
+
 
                 {/* Sección con íconos */}
                 <div className="max-w-5xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-2 gap-10">

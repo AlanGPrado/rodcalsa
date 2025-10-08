@@ -12,7 +12,9 @@ export default function Header() {
 
   const desktopRef = useRef<HTMLDivElement>(null);
   const mobileRef = useRef<HTMLDivElement>(null);
-
+// 9 especialista
+// 8 pa bajo sessionS
+// 7 directivos
   // Cerrar dropdown desktop si clic fuera
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {

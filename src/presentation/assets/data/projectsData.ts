@@ -36,6 +36,7 @@ import Property_4_11 from '../images/proyecto_4/pic_11.jpeg';
 import Property_4_12 from '../images/proyecto_4/pic_12.jpeg';
 import Property_4_13 from '../images/proyecto_4/pic_13.jpeg';
 import Property_4_14 from '../images/proyecto_4/pic_14.jpeg';
+import Property_4_15 from '../images/proyecto_4/vid_1.mp4';
 
 // Proyecto 5
 import Property_5 from '../images/proyecto_5/pic_1.jpeg';
@@ -74,6 +75,7 @@ export interface Project {
   location?: string;
   price?: string;
   images: string[];
+  video?: string;
   link?: string;
 }
 
@@ -104,6 +106,7 @@ export const projects: Project[] = [
     location: "Querétaro",
     price: "$6.000.000",
     images: [Property_4, Property_4_2, Property_4_3, Property_4_4, Property_4_5, Property_4_6, Property_4_7, Property_4_8, Property_4_9, Property_4_10, Property_4_11, Property_4_12, Property_4_13, Property_4_14],
+    video: Property_4_15,
     link: "/property/4",
   },
   {
