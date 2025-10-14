@@ -206,7 +206,8 @@ export default function Property() {
                             <div
                                 className="flex transition-transform duration-700 ease-in-out"
                                 style={{
-                                    transform: `translateX(-${currentSlide * (100 / projectsPerSlide)}%)`,
+                                    transform: `translateX(-${currentSlide * 100}%)`,
+
                                 }}
                             >
                                 {projects.map((project, idx) => (
