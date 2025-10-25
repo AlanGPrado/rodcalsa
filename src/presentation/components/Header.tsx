@@ -49,7 +49,7 @@ export default function Header() {
 
         {/* Logo */}
         <Link to="/" className="flex items-center justify-center">
-          <img src={Logo} alt="Logo" className="h-[66px] w-auto object-contain" />
+          <img src={Logo} alt="Logo" className="h-[66px] w-auto object-contain" loading="lazy"/>
         </Link>
 
         {/* Right Nav (desktop) */}

@@ -88,6 +88,7 @@ export default function Property() {
                         src={currentProject.images[0]}
                         alt="Propiedad principal"
                         className="w-full h-full object-cover"
+                        loading="lazy"
                     />
                     <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/50 flex flex-col items-center justify-center text-center px-6">
                         <motion.h2
@@ -138,6 +139,7 @@ export default function Property() {
                                     src={img}
                                     alt={`Imagen ${idx + 1}`}
                                     className="w-full h-full object-cover transform transition duration-500 ease-in-out hover:scale-105"
+                                    loading="lazy"
                                 />
                             </div>
                         );
@@ -230,11 +232,13 @@ export default function Property() {
                                                     alt={`Blur fondo ${idx + 1}`}
                                                     className="absolute inset-0 w-full h-full object-cover blur-lg scale-110"
                                                     aria-hidden="true"
+                                                    loading="lazy"
                                                 />
                                                 <img
                                                     src={project.images[0]}
                                                     alt={project.title}
                                                     className="relative z-20 w-full h-full object-contain transition-transform duration-300 hover:scale-105"
+                                                    loading="lazy"
                                                 />
                                             </a>
                                             <div className="relative z-30 bg-[#3C3C3C] text-white text-center py-4 flex items-center justify-center h-20">
@@ -296,6 +300,7 @@ export default function Property() {
                         src={currentProject.images[currentIndex]}
                         alt={`Imagen ${currentIndex + 1}`}
                         className="max-w-[90%] max-h-[80%] object-contain rounded-lg shadow-lg"
+                        loading="lazy"
                     />
 
                     <button

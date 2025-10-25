@@ -12,6 +12,7 @@ export default function Footer() {
               src={Logo}
               alt="Logo"
               className="max-w-[100px] w-full h-auto object-contain"
+              loading='lazy'
             />
           </Link>
           <p className="text-sm text-gray-600">

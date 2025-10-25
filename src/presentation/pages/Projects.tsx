@@ -38,6 +38,7 @@ export default function ProjectCards() {
                                         src={project.images[0]}
                                         alt={project.title}
                                         className="w-full h-64 object-cover transition-transform duration-300 hover:scale-105"
+                                        loading="lazy"
                                     />
                                 </Link>
 
