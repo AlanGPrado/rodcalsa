@@ -3,15 +3,20 @@ import { Phone, Mail, MapPin, MessageSquare } from "lucide-react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
+import { useLanguage } from "../../context/LanguageContext";
 
 export default function Contact() {
+    const location = useLocation();
+    const { t } = useLanguage();
+
     useEffect(() => {
         window.scrollTo(0, 0);
-    }, []);
+    }, [location.pathname]);
     return (
         <main key={window.location.pathname}>
             <Header></Header>
-            <section className="py-20 bg-white" id="contacto">
+            <section key={location.pathname} className="py-20 bg-white" id="contacto">
                 <div className="max-w-6xl mx-auto px-6 lg:px-12">
                     {/* Título */}
                     <motion.div
@@ -19,15 +24,14 @@ export default function Contact() {
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8 }}
-                        viewport={{ once: true }}
+                        viewport={{ once: true, amount: 0.3 }}
                     >
-                        <h2 className="text-4xl md:text-5xl font-bold text-gray-800">
-                            Contáctanos
+                        <div className="decorative-line"></div>
+                        <h2 className="section-title">
+                            {t('contact.title')}
                         </h2>
-                        <p className="mt-4 text-gray-600 text-lg max-w-2xl mx-auto">
-                            En <span className="text-[#EF9314] font-semibold">Rocalsa</span>
-                            &nbsp;creemos en la comunicación directa con nuestros clientes.
-                            Ya sea que necesites una cotización, agendar una visita a obra o simplemente resolver una duda, estamos disponibles para atenderte en todo momento.
+                        <p className="section-subtitle">
+                            {t('contact.subtitle')}
                         </p>
                     </motion.div>
 
@@ -38,39 +42,39 @@ export default function Contact() {
                             initial={{ opacity: 0, y: 40 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8 }}
-                            viewport={{ once: true }}
+                            viewport={{ once: true, amount: 0.3 }}
                             className="bg-gray-50 rounded-xl shadow p-8 hover:shadow-md transition flex flex-col items-center"
                         >
                             <Phone className="w-10 h-10 text-[#EF9314] mb-4" />
                             <h3 className="text-xl font-semibold mb-2 text-gray-800">
-                                Teléfono / WhatsApp
+                                {t('contact.phone.title')}
                             </h3>
                             <p className="text-gray-600">
-                                Llámanos o mándanos un mensaje directamente a nuestro WhatsApp.
+                                {t('contact.phone.description')}
                                 <br />
                                 <span className="font-semibold text-gray-800">
-                                    +52 55 1234 5678
+                                    {t('contact.phone.number')}
                                 </span>
                             </p>
                         </motion.div>
 
                         {/* Correo */}
                         <motion.div
-                            initial={{ opacity: 0, y: 40 }}
+                            initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.8, delay: 0.2 }}
-                            viewport={{ once: true }}
-                            className="bg-gray-50 rounded-xl shadow p-8 hover:shadow-md transition flex flex-col items-center"
+                            transition={{ duration: 0.6, delay: 0.2 }}
+                            viewport={{ once: true, amount: 0.3 }}
+                            className="group bg-white p-8 rounded-2xl shadow-medium hover:shadow-strong transition-all duration-300 text-center border border-gray-100 hover:border-orange-200 hover-lift"
                         >
                             <Mail className="w-10 h-10 text-[#EF9314] mb-4" />
                             <h3 className="text-xl font-semibold mb-2 text-gray-800">
-                                Correo electrónico
+                                {t('contact.email.title')}
                             </h3>
                             <p className="text-gray-600">
-                                Escríbenos para cotizaciones, dudas o seguimiento de proyectos.
+                                {t('contact.email.description')}
                                 <br />
                                 <span className="font-semibold text-gray-800">
-                                    contacto@rocalsa.com
+                                    {t('contact.email.address')}
                                 </span>
                             </p>
                         </motion.div>
@@ -80,18 +84,18 @@ export default function Contact() {
                             initial={{ opacity: 0, y: 40 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, delay: 0.4 }}
-                            viewport={{ once: true }}
+                            viewport={{ once: true, amount: 0.3 }}
                             className="bg-gray-50 rounded-xl shadow p-8 hover:shadow-md transition flex flex-col items-center"
                         >
                             <MapPin className="w-10 h-10 text-[#EF9314] mb-4" />
                             <h3 className="text-xl font-semibold mb-2 text-gray-800">
-                                Dirección
+                                {t('contact.address.title')}
                             </h3>
                             <p className="text-gray-600">
-                                Visítanos en nuestra oficina para atención personalizada:
+                                {t('contact.address.description')}
                                 <br />
                                 <span className="font-semibold text-gray-800">
-                                    Av. Ejemplo 123, Col. Centro, CDMX
+                                    {t('contact.address.location')}
                                 </span>
                             </p>
                         </motion.div>
@@ -102,44 +106,47 @@ export default function Contact() {
                         initial={{ opacity: 0, y: 50 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8 }}
-                        viewport={{ once: true }}
+                        viewport={{ once: true, amount: 0.3 }}
                         className="bg-gray-50 rounded-2xl shadow-lg p-10 mb-20"
                     >
                         <h3 className="text-2xl font-semibold text-gray-800 mb-6 flex items-center gap-2">
                             <MessageSquare className="text-[#EF9314] w-6 h-6" />
-                            Envíanos un mensaje
+                            {t('contact.form.title')}
                         </h3>
                         <form className="grid gap-6 md:grid-cols-2">
                             <input
                                 type="text"
-                                placeholder="Nombre completo"
-                                className="p-4 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#EF9314] outline-none"
+                                placeholder={t('contact.form.name')}
+                                className="input-modern"
                             />
                             <input
                                 type="email"
-                                placeholder="Correo electrónico"
-                                className="p-4 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#EF9314] outline-none"
+                                placeholder={t('contact.form.email')}
+                                className="input-modern"
                             />
                             <input
                                 type="text"
-                                placeholder="Teléfono (opcional)"
-                                className="p-4 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#EF9314] outline-none"
+                                placeholder={t('contact.form.phone')}
+                                className="input-modern"
                             />
                             <input
                                 type="text"
-                                placeholder="Asunto"
-                                className="p-4 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#EF9314] outline-none"
+                                placeholder={t('contact.form.subject')}
+                                className="input-modern"
                             />
                             <textarea
-                                placeholder="Escribe tu mensaje..."
+                                placeholder={t('contact.form.message')}
                                 rows={5}
-                                className="p-4 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#EF9314] outline-none md:col-span-2"
+                                className="input-modern md:col-span-2 resize-none"
                             ></textarea>
                             <button
                                 type="submit"
-                                className="bg-[#EF9314] hover:bg-[#d77e0d] text-white px-8 py-4 rounded-lg font-semibold shadow-md transition-colors duration-300 md:col-span-2 w-[50%] m-auto"
+                                className="btn-primary md:col-span-2 w-full md:w-auto md:mx-auto"
                             >
-                                Enviar mensaje
+                                {t('contact.form.submit')}
+                                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                </svg>
                             </button>
                         </form>
                     </motion.div>
@@ -149,7 +156,7 @@ export default function Contact() {
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}
                         transition={{ duration: 1 }}
-                        viewport={{ once: true }}
+                        viewport={{ once: true, amount: 0.3 }}
                         className="overflow-hidden rounded-2xl shadow-lg"
                     >
                         <iframe

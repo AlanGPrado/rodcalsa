@@ -2,25 +2,30 @@ import { useEffect } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { projects } from "../assets/data/projectsData";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import { useLanguage } from "../../context/LanguageContext";
 
 export default function ProjectCards() {
+    const location = useLocation();
+    const { t } = useLanguage();
+
     useEffect(() => {
         window.scrollTo(0, 0);
-    }, []);
+    }, [location.pathname]);
 
     return (
         <main>
             <Header />
-            <section className="py-20 bg-white" id="proyectos">
+            <section key={location.pathname} className="py-20 bg-white" id="proyectos">
                 <div className="max-w-6xl mx-auto px-6 lg:px-12">
                     {/* Título */}
-                    <div className="text-center mb-12">
-                        <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
-                            Proyectos <span className="text-[#EF9314]">Realizados</span>
+                    <div className="section-header">
+                        <div className="decorative-line"></div>
+                        <h2 className="section-title">
+                            {t('projects.title')} <span className="text-gradient">{t('projects.titleHighlight')}</span>
                         </h2>
-                        <p className="mt-4 text-gray-600 text-lg">
-                            Explora nuestras casas y almacenes más destacados.
+                        <p className="section-subtitle">
+                            {t('projects.subtitle')}
                         </p>
                     </div>
 
@@ -29,16 +34,15 @@ export default function ProjectCards() {
                         {projects.map((project, idx) => (
                             <div
                                 key={idx}
-                                className="bg-white rounded-sm shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 cursor-pointer opacity-0 translate-y-6 animate-fadeIn"
+                                className="group bg-white rounded-lg shadow-medium hover:shadow-strong transition-all duration-500 cursor-pointer overflow-hidden hover-lift border border-gray-100 hover:border-orange-200"
                                 style={{ animationDelay: `${idx * 0.2}s` }}
                             >
                                 {/* Imagen */}
-                                <Link to={String(project.link)} className="block overflow-hidden">
+                                <Link to={String(project.link)} className="block img-zoom-container">
                                     <img
                                         src={project.images[0]}
                                         alt={project.title}
-                                        className="w-full h-64 object-cover transition-transform duration-300 hover:scale-105"
-                                        loading="lazy"
+                                        className="w-full h-64 object-cover img-zoom"
                                     />
                                 </Link>
 

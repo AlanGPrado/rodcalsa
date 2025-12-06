@@ -1,0 +1,228 @@
+{
+    "header": {
+        "inicio": "Inicio",
+        "nosotros": "Nosotros",
+        "servicios": "Servicios",
+        "proyectos": "Proyectos",
+        "contacto": "Contacto",
+        "idioma": "Idioma",
+        "espanol": "Español",
+        "ingles": "Inglés"
+    },
+    "footer": {
+        "certification": "Certificados en el Sistema de Gestión Integral",
+        "nosotros": "Nosotros",
+        "contactanos": "Contáctanos",
+        "servicios": "Servicios",
+        "proyectos": "Proyectos",
+        "informacion": "Información",
+        "privacidad": "Política de privacidad",
+        "terminos": "Términos y condiciones",
+        "certificaciones": "Certificaciones",
+        "copyright": "Rocalsa SA de CV."
+    },
+    "presentation": {
+        "title": "Sobre",
+        "titleHighlight": "Rocalsa",
+        "subtitle": "Soluciones integrales en construcción y materiales premium, con instalación profesional que nos diferencia de la competencia.",
+        "mision": {
+            "title": "Misión",
+            "content": "En Rocalsa ofrecemos soluciones integrales en construcción y acabados, desde proyectos completos hasta la importación e instalación de materiales premium. Nuestra misión es brindar confianza, calidad e innovación a cada cliente, garantizando resultados que combinan diseño, funcionalidad y durabilidad."
+        },
+        "vision": {
+            "title": "Visión",
+            "content": "Ser una empresa referente en construcción y suministro de materiales a nivel regional y nacional, reconocida por nuestra capacidad de ejecutar proyectos de principio a fin y por proveer materiales innovadores y exclusivos que marcan tendencia en el mercado."
+        },
+        "filosofia": {
+            "title": "Filosofía",
+            "confianza": {
+                "label": "Confianza:",
+                "text": "trabajamos con un equipo de profesionales y proveedores confiables."
+            },
+            "calidad": {
+                "label": "Calidad:",
+                "text": "importamos y fabricamos materiales que aseguran acabados únicos y de larga duración."
+            },
+            "cumplimiento": {
+                "label": "Cumplimiento:",
+                "text": "entregamos en tiempo y forma cada proyecto o instalación."
+            },
+            "innovacion": {
+                "label": "Innovación:",
+                "text": "integramos productos de vanguardia que diferencian a nuestros clientes."
+            },
+            "flexibilidad": {
+                "label": "Flexibilidad:",
+                "text": "atendemos tanto grandes obras como proyectos residenciales o comerciales de menor escala."
+            }
+        }
+    },
+    "divisions": {
+        "title": "Nuestras",
+        "titleHighlight": "Divisiones",
+        "subtitle": "Ofrecemos soluciones integrales en construcción y materiales premium, con instalación profesional que nos diferencia de la competencia.",
+        "construction": {
+            "title": "División Construcción",
+            "items": [
+                "Obras completas (casas, bodegas, clínicas, departamentos).",
+                "Remodelaciones residenciales y comerciales.",
+                "Proyectos llave en mano: diseño, ingeniería, gestión y ejecución."
+            ]
+        },
+        "materials": {
+            "title": "División Materiales & Acabados Premium",
+            "items": [
+                "Ventanas y ventanales de vidrio templado.",
+                "Puertas y cancelería de aluminio.",
+                "Deck y pisos de madera sintética.",
+                "Lambrín decorativo.",
+                "Piedra y revestimientos de pared.",
+                "Papel tapiz de cualquier tipo."
+            ],
+            "note": "No solo vendemos el material, también lo instalamos profesionalmente, un plus enorme frente a la competencia."
+        }
+    },
+    "ourPlus": {
+        "title": "Nuestro",
+        "titleHighlight": "Plus",
+        "subtitle": "Lo que nos diferencia y hace únicos frente a la competencia.",
+        "items": [
+            "Importadores 100% → mejores precios.",
+            "Instalación garantizada por personal especializado.",
+            "Materiales exclusivos y modernos.",
+            "Soluciones tanto para clientes residenciales como comerciales e industriales."
+        ]
+    },
+    "seeMore": {
+        "title": "Conoce nuestros",
+        "titleHighlight": "Proyectos",
+        "subtitle": "Explora las casas y almacenes que hemos realizado con la más alta calidad en diseño y construcción.",
+        "button": "Ver Proyectos"
+    },
+    "slider": {
+        "button": "Descubre más"
+    },
+    "services": {
+        "title": "Nuestros",
+        "titleHighlight": "Servicios",
+        "subtitle": "Ofrecemos soluciones integrales en construcción y materiales premium, con instalación profesional que nos diferencia de la competencia.",
+        "construction": {
+            "title": "División Construcción",
+            "items": [
+                "Obras completas (casas, bodegas, clínicas, departamentos).",
+                "Remodelaciones residenciales y comerciales.",
+                "Proyectos llave en mano: diseño, ingeniería, gestión y ejecución."
+            ]
+        },
+        "materials": {
+            "title": "División Materiales & Acabados Premium",
+            "items": [
+                "Ventanas y ventanales de vidrio templado.",
+                "Puertas y cancelería de aluminio.",
+                "Deck y pisos de madera sintética.",
+                "Lambrín decorativo.",
+                "Piedra y revestimientos de pared.",
+                "Papel tapiz de cualquier tipo.",
+                "No solo vendemos el material, también lo instalamos profesionalmente, un plus enorme frente a la competencia."
+            ]
+        },
+        "ourPlus": {
+            "title": "Nuestro Plus",
+            "items": [
+                "Importadores 100% → mejores precios.",
+                "Instalación garantizada por personal especializado.",
+                "Materiales exclusivos y modernos.",
+                "Soluciones tanto para clientes residenciales como comerciales e industriales."
+            ]
+        },
+        "footer": {
+            "title": "Contamos con los mejores servicios",
+            "subtitle": "Cada servicio que ofrecemos refleja nuestra dedicación a la excelencia, asegurando resultados de calidad, innovación y satisfacción total para nuestros clientes.",
+            "button": "¡Conoce nuestros proyectos!"
+        }
+    },
+    "about": {
+        "title": "Conoce",
+        "titleHighlight": "Rocalsa",
+        "subtitle": "Soluciones integrales en construcción y materiales premium, con instalación profesional que nos diferencia de la competencia.",
+        "mision": {
+            "title": "Misión",
+            "content": "En Rocalsa ofrecemos soluciones integrales en construcción y acabados, desde proyectos completos hasta la importación e instalación de materiales premium. Nuestra misión es brindar confianza, calidad e innovación a cada cliente, garantizando resultados que combinan diseño, funcionalidad y durabilidad."
+        },
+        "vision": {
+            "title": "Visión",
+            "content": "Ser una empresa referente en construcción y suministro de materiales a nivel regional y nacional, reconocida por nuestra capacidad de ejecutar proyectos de principio a fin y por proveer materiales innovadores y exclusivos que marcan tendencia en el mercado."
+        },
+        "filosofia": {
+            "title": "Filosofía",
+            "items": [
+                {
+                    "label": "Confianza",
+                    "text": "trabajamos con un equipo de profesionales y proveedores confiables."
+                },
+                {
+                    "label": "Calidad",
+                    "text": "importamos y fabricamos materiales que aseguran acabados únicos y de larga duración."
+                },
+                {
+                    "label": "Cumplimiento",
+                    "text": "entregamos en tiempo y forma cada proyecto o instalación."
+                },
+                {
+                    "label": "Innovación",
+                    "text": "integramos productos de vanguardia que diferencian a nuestros clientes."
+                },
+                {
+                    "label": "Flexibilidad",
+                    "text": "atendemos tanto grandes obras como proyectos residenciales o comerciales de menor escala."
+                }
+            ]
+        },
+        "footer": {
+            "title": "Calidad, innovación y compromiso",
+            "subtitle": "Cada proyecto que realizamos refleja nuestra dedicación por la excelencia y la atención al detalle, asegurando que nuestros clientes reciban soluciones únicas y duraderas.",
+            "button": "¡Contáctanos!"
+        }
+    },
+    "projects": {
+        "title": "Proyectos",
+        "titleHighlight": "Realizados",
+        "subtitle": "Explora nuestras casas y almacenes más destacados."
+    },
+    "contact": {
+        "title": "Contáctanos",
+        "subtitle": "En Rocalsa creemos en la comunicación directa con nuestros clientes. Ya sea que necesites una cotización, agendar una visita a obra o simplemente resolver una duda, estamos disponibles para atenderte en todo momento.",
+        "phone": {
+            "title": "Teléfono / WhatsApp",
+            "description": "Llámanos o mándanos un mensaje directamente a nuestro WhatsApp.",
+            "number": "+52 55 1234 5678"
+        },
+        "email": {
+            "title": "Correo electrónico",
+            "description": "Escríbenos para cotizaciones, dudas o seguimiento de proyectos.",
+            "address": "contacto@rocalsa.com"
+        },
+        "address": {
+            "title": "Dirección",
+            "description": "Visítanos en nuestra oficina para atención personalizada:",
+            "location": "Av. Ejemplo 123, Col. Centro, CDMX"
+        },
+        "form": {
+            "title": "Envíanos un mensaje",
+            "name": "Nombre completo",
+            "email": "Correo electrónico",
+            "phone": "Teléfono (opcional)",
+            "subject": "Asunto",
+            "message": "Escribe tu mensaje...",
+            "submit": "Enviar mensaje"
+        },
+        "mapTitle": "Ubicación"
+    },
+    "property": {
+        "dimensions": "Dimensiones",
+        "area": "Área total: 350 m²",
+        "city": "Ciudad",
+        "otherProjects": "Otros Proyectos",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer dapibus justo vitae elit faucibus, in tincidunt nisl tincidunt. Duis condimentum lectus nec risus lacinia, sed consequat magna suscipit. Aliquam erat volutpat. Curabitur ut tellus nec sapien tincidunt placerat. Proin maximus, erat ut faucibus eleifend, sapien nulla vehicula nisl, ut pretium lorem mauris in velit."
+    }
+}

@@ -3,8 +3,11 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { projects } from "../assets/data/projectsData";
+import { useLanguage } from "../../context/LanguageContext";
 
 const Slideshow = () => {
+    const { t } = useLanguage();
+
     // Build slides: one per project
     const slides = projects.map((project, idx) => ({
         image: project.images[0], // first image of each project
@@ -50,9 +53,8 @@ const Slideshow = () => {
             {slides.map((slide, index) => (
                 <div
                     key={index}
-                    className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-                        index === current ? "opacity-100 z-20" : "opacity-0 z-10"
-                    }`}
+                    className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${index === current ? "opacity-100 z-20" : "opacity-0 z-10"
+                        }`}
                 >
                     <img
                         src={slide.image}
@@ -60,22 +62,24 @@ const Slideshow = () => {
                         className="w-full h-full object-cover"
                         loading="lazy"
                     />
-
-                    <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/50 flex flex-col items-center justify-center text-center px-6">
+                    <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/50 particles-bg flex flex-col items-center justify-center text-center px-6">
                         <motion.h2
                             initial={{ opacity: 0, y: 15 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 1.4, ease: "easeOut" }}
-                            className="text-white text-3xl md:text-5xl lg:text-5xl font-extrabold leading-tight drop-shadow-2xl"
+                            className="text-white text-3xl md:text-5xl lg:text-6xl font-extrabold leading-tight drop-shadow-2xl"
                         >
                             {slide.title}
                         </motion.h2>
 
                         <Link
                             to={slide.link ?? "#"}
-                            className="mt-6 bg-[#EF9314] hover:bg-[#d77e0d] text-white px-6 py-3 rounded-lg text-lg md:text-xl font-semibold shadow-md transition-colors duration-300"
+                            className="mt-6 btn-primary btn-magnetic inline-flex items-center gap-2 shadow-glow-orange"
                         >
-                            Descubre más
+                            {t('slider.button')}
+                            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                            </svg>
                         </Link>
                     </div>
                 </div>
@@ -100,11 +104,10 @@ const Slideshow = () => {
                 {slides.map((_, idx) => (
                     <button
                         key={idx}
-                        className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                            idx === current
-                                ? "bg-white scale-125"
-                                : "bg-white/60 hover:bg-white"
-                        }`}
+                        className={`w-3 h-3 rounded-full transition-all duration-300 ${idx === current
+                            ? "bg-white scale-125"
+                            : "bg-white/60 hover:bg-white"
+                            }`}
                         onClick={() => goToSlide(idx)}
                     />
                 ))}

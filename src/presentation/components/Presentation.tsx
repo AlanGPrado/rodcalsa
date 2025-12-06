@@ -1,53 +1,54 @@
 import { motion } from "framer-motion";
 import { Globe, Eye, Lightbulb } from "lucide-react";
+import { useLanguage } from "../../context/LanguageContext";
 
 const Presentation = () => {
+    const { t } = useLanguage();
+
     const sections = [
         {
-            title: "Misión",
+            title: t('presentation.mision.title'),
             icon: <Globe className="w-10 h-10 text-[#EF9314]" />,
-            content:
-                "En Rocalsa ofrecemos soluciones integrales en construcción y acabados, desde proyectos completos hasta la importación e instalación de materiales premium. Nuestra misión es brindar confianza, calidad e innovación a cada cliente, garantizando resultados que combinan diseño, funcionalidad y durabilidad.",
+            content: t('presentation.mision.content'),
         },
         {
-            title: "Visión",
+            title: t('presentation.vision.title'),
             icon: <Eye className="w-10 h-10 text-[#EF9314]" />,
-            content:
-                "Ser una empresa referente en construcción y suministro de materiales a nivel regional y nacional, reconocida por nuestra capacidad de ejecutar proyectos de principio a fin y por proveer materiales innovadores y exclusivos que marcan tendencia en el mercado.",
+            content: t('presentation.vision.content'),
         },
         {
-            title: "Filosofía",
+            title: t('presentation.filosofia.title'),
             icon: <Lightbulb className="w-10 h-10 text-[#EF9314]" />,
             content: (
                 <div className="space-y-4 text-gray-700 text-lg">
                     <div className="flex items-start gap-3">
                         <span className="mt-2 w-3 h-3 bg-[#EF9314] rounded-full flex-shrink-0"></span>
                         <p>
-                            <span className="font-semibold">Confianza:</span> trabajamos con un equipo de profesionales y proveedores confiables.
+                            <span className="font-semibold">{t('presentation.filosofia.confianza.label')}</span> {t('presentation.filosofia.confianza.text')}
                         </p>
                     </div>
                     <div className="flex items-start gap-3">
                         <span className="mt-2 w-3 h-3 bg-[#EF9314] rounded-full flex-shrink-0"></span>
                         <p>
-                            <span className="font-semibold">Calidad:</span> importamos y fabricamos materiales que aseguran acabados únicos y de larga duración.
+                            <span className="font-semibold">{t('presentation.filosofia.calidad.label')}</span> {t('presentation.filosofia.calidad.text')}
                         </p>
                     </div>
                     <div className="flex items-start gap-3">
                         <span className="mt-2 w-3 h-3 bg-[#EF9314] rounded-full flex-shrink-0"></span>
                         <p>
-                            <span className="font-semibold">Cumplimiento:</span> entregamos en tiempo y forma cada proyecto o instalación.
+                            <span className="font-semibold">{t('presentation.filosofia.cumplimiento.label')}</span> {t('presentation.filosofia.cumplimiento.text')}
                         </p>
                     </div>
                     <div className="flex items-start gap-3">
                         <span className="mt-2 w-3 h-3 bg-[#EF9314] rounded-full flex-shrink-0"></span>
                         <p>
-                            <span className="font-semibold">Innovación:</span> integramos productos de vanguardia que diferencian a nuestros clientes.
+                            <span className="font-semibold">{t('presentation.filosofia.innovacion.label')}</span> {t('presentation.filosofia.innovacion.text')}
                         </p>
                     </div>
                     <div className="flex items-start gap-3">
                         <span className="mt-2 w-3 h-3 bg-[#EF9314] rounded-full flex-shrink-0"></span>
                         <p>
-                            <span className="font-semibold">Flexibilidad:</span> atendemos tanto grandes obras como proyectos residenciales o comerciales de menor escala.
+                            <span className="font-semibold">{t('presentation.filosofia.flexibilidad.label')}</span> {t('presentation.filosofia.flexibilidad.text')}
                         </p>
                     </div>
                 </div>
@@ -62,10 +63,10 @@ const Presentation = () => {
                 {/* Título general */}
                 <div className="text-center mb-16">
                     <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
-                        Sobre <span className="text-[#EF9314]">Rocalsa</span>
+                        {t('presentation.title')} <span className="text-[#EF9314]">{t('presentation.titleHighlight')}</span>
                     </h2>
                     <p className="mt-4 text-gray-600 text-lg">
-                        Soluciones integrales en construcción y materiales premium, con instalación profesional que nos diferencia de la competencia.
+                        {t('presentation.subtitle')}
                     </p>
                 </div>
 

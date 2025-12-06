@@ -1,40 +1,24 @@
 import { motion } from "framer-motion";
+import { useLanguage } from "../../context/LanguageContext";
 
 export default function DivisionesVertical() {
-    const buildItems = [
-        "Obras completas (casas, bodegas, clínicas, departamentos).",
-        "Remodelaciones residenciales y comerciales.",
-        "Proyectos llave en mano: diseño, ingeniería, gestión y ejecución.",
-    ];
-
-    const materialsItems = [
-        "Ventanas y ventanales de vidrio templado.",
-        "Puertas y cancelería de aluminio.",
-        "Deck y pisos de madera sintética.",
-        "Lambrín decorativo.",
-        "Piedra y revestimientos de pared.",
-        "Papel tapiz de cualquier tipo.",
-    ];
+    const { t } = useLanguage();
 
     return (
-        <section className="py-20 bg-white">
-            <div className="max-w-5xl mx-auto px-6 lg:px-12">
+        <section className="py-20 bg-white relative">
+            {/* Subtle background pattern */}
+            <div className="absolute inset-0 pattern-grid opacity-50"></div>
+            <div className="max-w-6xl mx-auto px-6 lg:px-12 relative z-10">
                 {/* Título */}
-                <motion.div
-                    className="text-center mb-16"
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8 }}
-                    viewport={{ once: true }}
-                >
-                    <h2 className="text-4xl md:text-5xl font-bold text-gray-800">
-                        Nuestras <span className="text-[#EF9314]">Divisiones</span>
+                <div className="section-header">
+                    <div className="decorative-line"></div>
+                    <h2 className="section-title">
+                        {t('divisions.title')} <span className="text-gradient">{t('divisions.titleHighlight')}</span>
                     </h2>
-                    <p className="mt-4 text-gray-600 text-lg">
-                        Ofrecemos soluciones integrales en construcción y materiales premium,
-                        con instalación profesional que nos diferencia de la competencia.
+                    <p className="section-subtitle">
+                        {t('divisions.subtitle')}
                     </p>
-                </motion.div>
+                </div>
 
                 {/* División Construcción */}
                 <motion.div
@@ -42,13 +26,13 @@ export default function DivisionesVertical() {
                     initial={{ opacity: 0, y: 40 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.2 }}
-                    viewport={{ once: true }}
+                    viewport={{ once: true, amount: 0.3 }}
                 >
                     <h3 className="text-3xl md:text-4xl font-semibold text-[#EF9314] mb-6">
-                        División Construcción
+                        {t('divisions.construction.title')}
                     </h3>
                     <div className="space-y-4 text-gray-700 text-lg">
-                        {buildItems.map((item, idx) => (
+                        {(t('divisions.construction.items') as string[]).map((item: string, idx: number) => (
                             <div key={idx} className="flex items-start gap-3">
                                 <span className="mt-1 w-3 h-3 bg-[#EF9314] rounded-full flex-shrink-0"></span>
                                 <p>{item}</p>
@@ -62,23 +46,19 @@ export default function DivisionesVertical() {
                     initial={{ opacity: 0, y: 40 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.4 }}
-                    viewport={{ once: true }}
+                    viewport={{ once: true, amount: 0.3 }}
                 >
                     <h3 className="text-3xl md:text-4xl font-semibold text-[#EF9314] mb-6">
-                        División Materiales & Acabados Premium
+                        {t('divisions.materials.title')}
                     </h3>
                     <div className="space-y-4 text-gray-700 text-lg">
-                        {materialsItems.map((item, idx) => (
+                        {(t('divisions.materials.items') as string[]).map((item: string, idx: number) => (
                             <div key={idx} className="flex items-start gap-3">
                                 <span className="mt-1 w-3 h-3 bg-[#EF9314] rounded-full flex-shrink-0"></span>
                                 <p>{item}</p>
                             </div>
                         ))}
                     </div>
-                    <p className="mt-4 text-gray-600 italic text-lg">
-                        No solo vendemos el material, también lo instalamos profesionalmente,
-                        un plus enorme frente a la competencia.
-                    </p>
                 </motion.div>
             </div>
         </section>

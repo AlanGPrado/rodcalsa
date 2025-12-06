@@ -1,7 +1,9 @@
 import { Link } from 'react-router-dom';
 import Logo from '../assets/images/logo.png';
+import { useLanguage } from '../../context/LanguageContext';
 
 export default function Footer() {
+  const { t } = useLanguage();
   return (
     <footer className="bg-gray-50 text-gray-800">
       <div className="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -16,27 +18,27 @@ export default function Footer() {
             />
           </Link>
           <p className="text-sm text-gray-600">
-            Certificados en el Sistema de Gestión Integral
+            {t('footer.certification')}
           </p>
         </div>
 
         {/* Nosotros menu */}
         <div>
-          <p className="font-semibold mb-3">Nosotros</p>
+          <p className="font-semibold mb-3">{t('footer.nosotros')}</p>
           <ul className="space-y-2 text-sm text-gray-700">
             <li>
               <Link to="/contacto" className="hover:text-[#EF9314] transition">
-                Contáctanos
+                {t('footer.contactanos')}
               </Link>
             </li>
             <li>
               <a href="#" className="hover:text-[#EF9314] transition">
-                Servicios
+                {t('footer.servicios')}
               </a>
             </li>
             <li>
               <Link to="/proyectos" className="hover:text-[#EF9314] transition">
-                Proyectos
+                {t('footer.proyectos')}
               </Link>
             </li>
           </ul>
@@ -44,21 +46,21 @@ export default function Footer() {
 
         {/* Información menu */}
         <div>
-          <p className="font-semibold mb-3">Información</p>
+          <p className="font-semibold mb-3">{t('footer.informacion')}</p>
           <ul className="space-y-2 text-sm text-gray-700">
             <li>
               <a href="#" className="hover:text-[#EF9314] transition">
-                Política de privacidad
+                {t('footer.privacidad')}
               </a>
             </li>
             <li>
               <a href="#" className="hover:text-[#EF9314] transition">
-                Términos y condiciones
+                {t('footer.terminos')}
               </a>
             </li>
             <li>
               <a href="#" className="hover:text-[#EF9314] transition">
-                Certificaciones
+                {t('footer.certificaciones')}
               </a>
             </li>
           </ul>
@@ -68,16 +70,16 @@ export default function Footer() {
       {/* bottom bar */}
       <div className="border-t border-gray-200">
         <div className="max-w-7xl mx-auto px-6 py-6 flex flex-col md:flex-row items-center justify-between text-sm text-gray-500 gap-4">
-          <p>© {new Date().getFullYear()}, Rocalsa SA de CV.</p>
+          <p>© {new Date().getFullYear()}, {t('footer.copyright')}</p>
           <div className="flex items-center gap-4">
             <a href="#" className="hover:underline">
-              Política de privacidad
+              {t('footer.privacidad')}
             </a>
             <a href="#" className="hover:underline">
-              Términos y condiciones
+              {t('footer.terminos')}
             </a>
             <a href="#" className="hover:underline">
-              Certificaciones
+              {t('footer.certificaciones')}
             </a>
           </div>
         </div>

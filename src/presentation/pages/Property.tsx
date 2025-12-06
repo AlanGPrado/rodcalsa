@@ -1,7 +1,8 @@
 import { useEffect, useState, useRef } from "react";
-import { useLocation } from "react-router-dom"; // para leer la ruta
+import { useLocation } from "react-router-dom";
 import { X, ChevronLeft, ChevronRight, Home } from "lucide-react";
 import { motion } from "framer-motion";
+import { useLanguage } from "../../context/LanguageContext";
 
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -9,6 +10,7 @@ import { projects, type Project } from "../assets/data/projectsData";
 
 export default function Property() {
     const location = useLocation();
+    const { t } = useLanguage();
     const [isOpen, setIsOpen] = useState(false);
     const [currentIndex, setCurrentIndex] = useState(0);
     const [currentProject, setCurrentProject] = useState<Project | null>(null);
@@ -81,7 +83,7 @@ export default function Property() {
         <main>
             <Header />
 
-            <div className="w-full">
+            <div key={location.pathname} className="w-full">
                 {/* Imagen principal */}
                 <div className="relative w-full h-[400px] md:h-[650px] overflow-hidden">
                     <img
@@ -107,7 +109,7 @@ export default function Property() {
                     initial={{ opacity: 0, y: 40 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.4, delay: 0.2 }}
-                    viewport={{ once: true }}
+                    viewport={{ once: true, amount: 0.3 }}
                 >
                     <div className="max-w-4xl mx-auto px-6 py-12 text-center">
                         <h3 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4">
@@ -172,14 +174,14 @@ export default function Property() {
                         initial={{ opacity: 0, scale: 0.9 }}
                         whileInView={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 0.5, ease: "easeOut", delay: 0 }}
-                        viewport={{ once: true }}
+                        viewport={{ once: true, amount: 0.3 }}
                         className="flex items-center space-x-4 p-6 bg-white shadow-lg rounded-xl transform-gpu"
                         style={{ willChange: "transform, opacity" }}
                     >
                         <Home className="text-[#EF9314] w-12 h-12" />
                         <div>
-                            <h4 className="text-xl font-semibold text-gray-800">Dimensiones</h4>
-                            <p className="text-gray-600">Área total: 350 m²</p>
+                            <h4 className="text-xl font-semibold text-gray-800">{t('property.dimensions')}</h4>
+                            <p className="text-gray-600">{t('property.area')}</p>
                         </div>
                     </motion.div>
 
@@ -187,13 +189,13 @@ export default function Property() {
                         initial={{ opacity: 0, scale: 0.9 }}
                         whileInView={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 0.5, ease: "easeOut", delay: 0.15 }}
-                        viewport={{ once: true }}
+                        viewport={{ once: true, amount: 0.3 }}
                         className="flex items-center space-x-4 p-6 bg-white shadow-lg rounded-xl transform-gpu"
                         style={{ willChange: "transform, opacity" }}
                     >
                         <Home className="text-[#EF9314] w-12 h-12" />
                         <div>
-                            <h4 className="text-xl font-semibold text-gray-800">Ciudad</h4>
+                            <h4 className="text-xl font-semibold text-gray-800">{t('property.city')}</h4>
                             <p className="text-gray-600">{currentProject.location}</p>
                         </div>
                     </motion.div>
@@ -203,7 +205,7 @@ export default function Property() {
                 {/* Otros Proyectos */}
                 <div className="bg-gray-100 py-16">
                     <div className="max-w-6xl mx-auto px-6">
-                        <h3 className="text-3xl font-bold text-gray-800 mb-8">Otros Proyectos</h3>
+                        <h3 className="text-3xl font-bold text-gray-800 mb-8">{t('property.otherProjects')}</h3>
                         <section className="relative max-w-6xl mx-auto px-6 py-8 overflow-hidden">
                             <div
                                 className="flex transition-transform duration-700 ease-in-out"
@@ -218,7 +220,7 @@ export default function Property() {
                                         initial={{ opacity: 0, y: 30 }}
                                         whileInView={{ opacity: 1, y: 0 }}
                                         transition={{ duration: 0.6, delay: idx * 0.2 }}
-                                        viewport={{ once: true }}
+                                        viewport={{ once: true, amount: 0.3 }}
                                         className="px-2"
                                         style={{ minWidth: `${100 / projectsPerSlide}%` }}
                                     >

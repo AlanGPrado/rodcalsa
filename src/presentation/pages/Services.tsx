@@ -2,24 +2,24 @@ import { motion } from "framer-motion";
 import { Home, Box, Settings } from "lucide-react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useEffect } from "react";
+import { useLanguage } from "../../context/LanguageContext";
 
 export default function Services() {
+    const location = useLocation();
+    const { t } = useLanguage();
+
     useEffect(() => {
         window.scrollTo(0, 0);
-    }, []);
+    }, [location.pathname]);
     const divisions = [
         {
-            title: "División Construcción",
+            title: t('services.construction.title'),
             icon: <Home className="w-10 h-10 text-[#EF9314]" />,
             content: (
                 <div className="space-y-3 text-gray-700 text-base">
-                    {[
-                        "Obras completas (casas, bodegas, clínicas, departamentos).",
-                        "Remodelaciones residenciales y comerciales.",
-                        "Proyectos llave en mano: diseño, ingeniería, gestión y ejecución.",
-                    ].map((text, idx) => (
+                    {(t('services.construction.items') as string[]).map((text, idx) => (
                         <div key={idx} className="flex items-start gap-3">
                             <span className="mt-2 w-3 h-3 bg-[#EF9314] rounded-full flex-shrink-0"></span>
                             <p>{text}</p>
@@ -29,19 +29,11 @@ export default function Services() {
             ),
         },
         {
-            title: "División Materiales & Acabados Premium",
+            title: t('services.materials.title'),
             icon: <Box className="w-10 h-10 text-[#EF9314]" />,
             content: (
                 <div className="space-y-3 text-gray-700 text-base">
-                    {[
-                        "Ventanas y ventanales de vidrio templado.",
-                        "Puertas y cancelería de aluminio.",
-                        "Deck y pisos de madera sintética.",
-                        "Lambrín decorativo.",
-                        "Piedra y revestimientos de pared.",
-                        "Papel tapiz de cualquier tipo.",
-                        "No solo vendemos el material, también lo instalamos profesionalmente, un plus enorme frente a la competencia.",
-                    ].map((text, idx) => (
+                    {(t('services.materials.items') as string[]).map((text, idx) => (
                         <div key={idx} className="flex items-start gap-3">
                             <span className="mt-2 w-3 h-3 bg-[#EF9314] rounded-full flex-shrink-0"></span>
                             <p>{text}</p>
@@ -51,16 +43,11 @@ export default function Services() {
             ),
         },
         {
-            title: "Nuestro Plus",
+            title: t('services.ourPlus.title'),
             icon: <Settings className="w-10 h-10 text-[#EF9314]" />,
             content: (
                 <div className="space-y-3 text-gray-700 text-base">
-                    {[
-                        "Importadores 100% → mejores precios.",
-                        "Instalación garantizada por personal especializado.",
-                        "Materiales exclusivos y modernos.",
-                        "Soluciones tanto para clientes residenciales como comerciales e industriales.",
-                    ].map((text, idx) => (
+                    {(t('services.ourPlus.items') as string[]).map((text, idx) => (
                         <div key={idx} className="flex items-start gap-3">
                             <span className="mt-2 w-3 h-3 bg-[#EF9314] rounded-full flex-shrink-0"></span>
                             <p>{text}</p>
@@ -76,15 +63,16 @@ export default function Services() {
         <main className="bg-white">
             <Header />
 
-            <section className="py-20 bg-white">
+            <section key={location.pathname} className="py-20 bg-white">
                 <div className="max-w-6xl mx-auto px-6 lg:px-12">
                     {/* Título principal */}
-                    <div className="text-center mb-16">
-                        <h1 className="text-4xl md:text-5xl font-bold text-gray-900">
-                            Nuestros <span className="text-[#EF9314]">Servicios</span>
+                    <div className="section-header">
+                        <div className="decorative-line"></div>
+                        <h1 className="section-title">
+                            {t('services.title')} <span className="text-gradient">{t('services.titleHighlight')}</span>
                         </h1>
-                        <p className="mt-4 text-gray-600 text-lg max-w-2xl mx-auto">
-                            Ofrecemos soluciones integrales en construcción y materiales premium, con instalación profesional que nos diferencia de la competencia.
+                        <p className="section-subtitle">
+                            {t('services.subtitle')}
                         </p>
                     </div>
 
@@ -96,15 +84,15 @@ export default function Services() {
                                 initial={{ opacity: 0, y: 50 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.6, delay: idx * 0.2 }}
-                                viewport={{ once: true }}
-                                className="bg-gray-100 p-8 rounded-2xl shadow-lg flex flex-col hover:shadow-2xl transition-shadow duration-300"
+                                viewport={{ once: true, amount: 0.3 }}
+                                className="group relative bg-white p-8 rounded-2xl shadow-medium hover:shadow-strong transition-all duration-300 flex flex-col border border-gray-100 hover:border-orange-200 card-3d overflow-hidden"
                             >
                                 <div className="flex flex-col items-center mb-6 text-center">
-                                    {/* Icon wrapper ensures same size for all */}
-                                    <div className="flex items-center justify-center w-12 h-12 mb-3">
+                                    {/* Icon wrapper with gradient background */}
+                                    <div className="icon-container mb-4 group-hover:scale-110 transition-transform duration-300">
                                         {div.icon}
                                     </div>
-                                    <h3 className="text-2xl font-semibold text-gray-900 break-words">
+                                    <h3 className="text-2xl font-bold text-gray-900 break-words group-hover:text-[#EF9314] transition-colors duration-300">
                                         {div.title}
                                     </h3>
                                 </div>
@@ -119,24 +107,26 @@ export default function Services() {
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.6 }}
-                        viewport={{ once: true }}
+                        viewport={{ once: true, amount: 0.3 }}
                         className="mt-20 text-center max-w-3xl mx-auto"
                     >
+                        <div className="decorative-line"></div>
                         <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                            Contamos con los mejores servicios
+                            {t('services.footer.title')}
                         </h2>
-                        <p className="text-gray-600 text-lg mb-6">
-                            Cada servicio que ofrecemos refleja nuestra dedicación a la excelencia,
-                            asegurando resultados de calidad, innovación y satisfacción total para
-                            nuestros clientes.
+                        <p className="text-gray-600 text-lg mb-8 leading-relaxed">
+                            {t('services.footer.subtitle')}
                         </p>
 
-                        {/* Botón */}
+                        {/* Enhanced Button */}
                         <Link
                             to="/proyectos"
-                            className="inline-block px-8 py-3 bg-[#EF9314] text-white font-semibold rounded-full shadow-md hover:bg-[#d67f0f] transition-colors duration-300"
+                            className="btn-primary"
                         >
-                            ¡Conoce nuestros proyectos!
+                            {t('services.footer.button')}
+                            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                            </svg>
                         </Link>
                     </motion.div>
 

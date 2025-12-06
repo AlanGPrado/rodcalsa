@@ -1,13 +1,8 @@
 import { useEffect, useRef } from "react";
+import { useLanguage } from "../../context/LanguageContext";
 
 export default function NuestroPlus() {
-  const plusItems = [
-    "Importadores 100% → mejores precios.",
-    "Instalación garantizada por personal especializado.",
-    "Materiales exclusivos y modernos.",
-    "Soluciones tanto para clientes residenciales como comerciales e industriales.",
-  ];
-
+  const { t } = useLanguage();
   const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -23,7 +18,7 @@ export default function NuestroPlus() {
             const el = entry.target as HTMLElement;
             el.classList.add("opacity-100", "translate-y-0", "scale-100");
             el.classList.remove("opacity-0", "translate-y-8", "scale-95");
-            obs.unobserve(entry.target); // se anima una sola vez, igual que viewport.once
+            obs.unobserve(entry.target);
           }
         });
       },
@@ -36,24 +31,22 @@ export default function NuestroPlus() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-20 bg-white overflow-hidden">
+    <section ref={sectionRef} className="py-20 bg-gradient-mesh overflow-hidden">
       <div className="max-w-4xl mx-auto px-6 lg:px-12">
         {/* Título */}
-        <div
-          className="animate-on-scroll opacity-0 translate-y-8 scale-95 text-center mb-16 
-          transition-all duration-[600ms] ease-out"
-        >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-800">
-            Nuestro <span className="text-[#EF9314]">Plus</span>
+        <div className="section-header">
+          <div className="decorative-line"></div>
+          <h2 className="section-title">
+            {t('ourPlus.title')} <span className="text-gradient">{t('ourPlus.titleHighlight')}</span>
           </h2>
-          <p className="mt-4 text-gray-600 text-lg">
-            Lo que nos diferencia y hace únicos frente a la competencia.
+          <p className="section-subtitle">
+            {t('ourPlus.subtitle')}
           </p>
         </div>
 
         {/* Lista de Plus */}
         <div className="space-y-8">
-          {plusItems.map((item, idx) => (
+          {(t('ourPlus.items') as string[]).map((item: string, idx: number) => (
             <div
               key={idx}
               className={`animate-on-scroll opacity-0 translate-y-8 scale-95 
