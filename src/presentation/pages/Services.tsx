@@ -3,12 +3,14 @@ import { Home, Box, Settings } from "lucide-react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { Link, useLocation } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useLanguage } from "../../context/LanguageContext";
+import constructionSite from "../../assets/images/construction-site.png";
 
 export default function Services() {
     const location = useLocation();
     const { t } = useLanguage();
+    const [imageLoaded, setImageLoaded] = useState(false);
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -100,6 +102,25 @@ export default function Services() {
                             </motion.div>
                         ))}
                     </div>
+
+                    {/* Construction Site Image */}
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.95 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.8 }}
+                        viewport={{ once: true }}
+                        className="mt-20 max-w-3xl mx-auto rounded-2xl overflow-hidden shadow-2xl relative"
+                    >
+                        {!imageLoaded && (
+                            <div className="absolute inset-0 bg-gray-200 animate-pulse z-10" />
+                        )}
+                        <img
+                            src={constructionSite}
+                            alt="Construction Site"
+                            onLoad={() => setImageLoaded(true)}
+                            className="w-full h-[500px] object-cover hover:scale-105 transition-transform duration-700"
+                        />
+                    </motion.div>
 
                     {/* Texto adicional debajo de las tarjetas */}
                     {/* Texto adicional debajo de las tarjetas */}
