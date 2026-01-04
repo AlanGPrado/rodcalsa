@@ -64,7 +64,7 @@ export default function Contact() {
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, delay: 0.2 }}
                             viewport={{ once: true, amount: 0.3 }}
-                            className="group bg-white p-8 rounded-2xl shadow-medium hover:shadow-strong transition-all duration-300 text-center border border-gray-100 hover:border-orange-200 hover-lift"
+                            className="bg-gray-50 rounded-xl shadow p-8 hover:shadow-md transition flex flex-col items-center"
                         >
                             <Mail className="w-10 h-10 text-[#EF9314] mb-4" />
                             <h3 className="text-xl font-semibold mb-2 text-gray-800">
