@@ -23,7 +23,7 @@
     },
     "presentation": {
         "title": "Sobre",
-        "titleHighlight": "Rocalsa",
+        "titleHighlight": "Rodcalsa",
         "subtitle": "Soluciones integrales en construcción y materiales premium, con instalación profesional que nos diferencia de la competencia.",
         "mision": {
             "title": "Misión",
@@ -143,11 +143,11 @@
     },
     "about": {
         "title": "Conoce",
-        "titleHighlight": "Rocalsa",
+        "titleHighlight": "Rodcalsa",
         "subtitle": "Soluciones integrales en construcción y materiales premium, con instalación profesional que nos diferencia de la competencia.",
         "mision": {
             "title": "Misión",
-            "content": "En Rocalsa ofrecemos soluciones integrales en construcción y acabados, desde proyectos completos hasta la importación e instalación de materiales premium. Nuestra misión es brindar confianza, calidad e innovación a cada cliente, garantizando resultados que combinan diseño, funcionalidad y durabilidad."
+            "content": "En Rodcalsa ofrecemos soluciones integrales en construcción y acabados, desde proyectos completos hasta la importación e instalación de materiales premium. Nuestra misión es brindar confianza, calidad e innovación a cada cliente, garantizando resultados que combinan diseño, funcionalidad y durabilidad."
         },
         "vision": {
             "title": "Visión",
@@ -191,7 +191,7 @@
     },
     "contact": {
         "title": "Contáctanos",
-        "subtitle": "En Rocalsa creemos en la comunicación directa con nuestros clientes. Ya sea que necesites una cotización, agendar una visita a obra o simplemente resolver una duda, estamos disponibles para atenderte en todo momento.",
+        "subtitle": "En Rodcalsa creemos en la comunicación directa con nuestros clientes. Ya sea que necesites una cotización, agendar una visita a obra o simplemente resolver una duda, estamos disponibles para atenderte en todo momento.",
         "phone": {
             "title": "Teléfono / WhatsApp",
             "description": "Llámanos o mándanos un mensaje directamente a nuestro WhatsApp.",
@@ -200,7 +200,7 @@
         "email": {
             "title": "Correo electrónico",
             "description": "Escríbenos para cotizaciones, dudas o seguimiento de proyectos.",
-            "address": "contacto@rocalsa.com"
+            "address": "contacto@rodcalsa.com"
         },
         "address": {
             "title": "Dirección",
