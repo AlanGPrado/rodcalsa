@@ -143,11 +143,11 @@
     },
     "about": {
         "title": "Meet",
-        "titleHighlight": "Rocalsa",
+        "titleHighlight": "Rodcalsa",
         "subtitle": "Comprehensive solutions in construction and premium materials, with professional installation that sets us apart from the competition.",
         "mision": {
             "title": "Mission",
-            "content": "At Rocalsa, we offer comprehensive solutions in construction and finishes, from complete projects to the importation and installation of premium materials. Our mission is to provide trust, quality, and innovation to each client, guaranteeing results that combine design, functionality, and durability."
+            "content": "At Rodcalsa, we offer comprehensive solutions in construction and finishes, from complete projects to the importation and installation of premium materials. Our mission is to provide trust, quality, and innovation to each client, guaranteeing results that combine design, functionality, and durability."
         },
         "vision": {
             "title": "Vision",
@@ -191,7 +191,7 @@
     },
     "contact": {
         "title": "Contact Us",
-        "subtitle": "At Rocalsa, we believe in direct communication with our clients. Whether you need a quote, schedule a site visit, or simply resolve a question, we are available to assist you at all times.",
+        "subtitle": "At Rodcalsa, we believe in direct communication with our clients. Whether you need a quote, schedule a site visit, or simply resolve a question, we are available to assist you at all times.",
         "phone": {
             "title": "Phone / WhatsApp",
             "description": "Call us or send us a message directly to our WhatsApp.",
@@ -200,7 +200,7 @@
         "email": {
             "title": "Email",
             "description": "Write to us for quotes, questions, or project follow-up.",
-            "address": "contacto@rocalsa.com"
+            "address": "contacto@rodcalsa.com"
         },
         "address": {
             "title": "Address",
