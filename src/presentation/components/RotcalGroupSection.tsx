@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Layers, Building2, Home, ArrowRight } from "lucide-react";
-import { Link } from "react-router-dom";
+
 import { useLanguage } from "../../context/LanguageContext";
 
 export default function RotcalGroupSection() {
