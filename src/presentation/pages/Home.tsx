@@ -5,6 +5,7 @@ import Presentation from "../components/Presentation";
 import Divisions from "../components/Divisions";
 import OurPlus from "../components/OurPlus";
 import SeeMore from "../components/SeeMore";
+import RotcalGroupSection from "../components/RotcalGroupSection";
 import { useEffect } from "react";
 
 export default function Home() {
@@ -19,6 +20,7 @@ export default function Home() {
             <Slider />
             <Presentation />
             <Divisions />
+            <RotcalGroupSection />
             <OurPlus />
             <SeeMore />
             <Footer />

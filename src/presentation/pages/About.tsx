@@ -6,6 +6,8 @@ import { Link, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useLanguage } from "../../context/LanguageContext";
 import engineerBlueprints from "../../assets/images/engineer-blueprints.png";
+import RotcalGroupSection from "../components/RotcalGroupSection";
+
 
 export default function About() {
     const location = useLocation();
@@ -85,6 +87,9 @@ export default function About() {
                             </motion.div>
                         ))}
                     </div>
+
+                    {/* Rotcal Group Section */}
+                    <RotcalGroupSection />
 
                     {/* Team Image */}
                     <motion.div

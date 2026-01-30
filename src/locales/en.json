@@ -178,6 +178,24 @@
                 }
             ]
         },
+        "rodcalGroup": {
+            "title": "Rodcal Group Real Estate",
+            "description": "Rodcal Group Real Estate is part of Rodcal Group, a group with extensive experience in the real estate sector, dedicated to both project development and construction, as well as the purchase, sale, and rental of properties.",
+            "description2": "Through Rodcal Projects and Real Estate Developments, we have participated in various developments, constructions, and renovations, allowing us to understand a property from its structure, real value, and potential, not just from a commercial perspective.",
+            "description3": "This experience allows us to offer our clients a more solid, transparent, and well-founded real estate service, backed by the technical knowledge of a developer group.",
+            "structure": {
+                "group": "Rodcal Group",
+                "projects": {
+                    "title": "Rodcal Projects & Real Estate Developments",
+                    "desc": "Construction, renovation, and development of real estate projects",
+                    "cta": "View site"
+                },
+                "realEstate": {
+                    "title": "Rodcal Group Real Estate",
+                    "desc": "Purchase, sale, and rental of properties"
+                }
+            }
+        },
         "footer": {
             "title": "Quality, innovation and commitment",
             "subtitle": "Each project we undertake reflects our dedication to excellence and attention to detail, ensuring our clients receive unique and lasting solutions.",

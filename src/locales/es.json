@@ -178,6 +178,24 @@
                 }
             ]
         },
+        "rodcalGroup": {
+            "title": "Rodcal Group Bienes Raíces",
+            "description": "Rodcal Group Bienes Raíces forma parte de Rodcal Group, un grupo con amplia experiencia en el sector inmobiliario, dedicado tanto al desarrollo y construcción de proyectos como a la compra, venta y renta de inmuebles.",
+            "description2": "A través de Rodcal Proyectos y Desarrollos Inmobiliarios, hemos participado en diversos desarrollos, construcciones y remodelaciones, lo que nos permite entender un inmueble desde su estructura, su valor real y su potencial, no solo desde el punto de vista comercial.",
+            "description3": "Esta experiencia nos permite ofrecer a nuestros clientes un servicio inmobiliario más sólido, transparente y bien fundamentado, respaldado por el conocimiento técnico de un grupo desarrollador.",
+            "structure": {
+                "group": "Rodcal Group",
+                "projects": {
+                    "title": "Rodcal Proyectos y Desarrollos Inmobiliarios",
+                    "desc": "Construcción, remodelación y desarrollo de proyectos inmobiliarios",
+                    "cta": "Ver sitio"
+                },
+                "realEstate": {
+                    "title": "Rodcal Group Bienes Raíces",
+                    "desc": "Compra, venta y renta de inmuebles"
+                }
+            }
+        },
         "footer": {
             "title": "Calidad, innovación y compromiso",
             "subtitle": "Cada proyecto que realizamos refleja nuestra dedicación por la excelencia y la atención al detalle, asegurando que nuestros clientes reciban soluciones únicas y duraderas.",
