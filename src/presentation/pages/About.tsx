@@ -91,6 +91,11 @@ export default function About() {
                     {/* Rotcal Group Section */}
                     <RotcalGroupSection />
 
+                    {/* Separator */}
+                    <div className="max-w-7xl mx-auto px-6 lg:px-12 mb-20">
+                        <div className="h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent"></div>
+                    </div>
+
                     {/* Team Image */}
                     <motion.div
                         initial={{ opacity: 0, scale: 0.95 }}
@@ -106,7 +111,7 @@ export default function About() {
                             src={engineerBlueprints}
                             alt="Engineering Team"
                             onLoad={() => setImageLoaded(true)}
-                            className="w-full h-[500px] object-cover hover:scale-105 transition-transform duration-700"
+                            className="w-full h-[400px] object-cover hover:scale-105 transition-transform duration-700"
                         />
                     </motion.div>
 

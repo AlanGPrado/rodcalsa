@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import Logo from '../assets/images/logo.png';
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { GlobeAltIcon } from "@heroicons/react/24/outline";
 import { useLanguage } from "../../context/LanguageContext";
@@ -11,9 +11,15 @@ export default function Header() {
   const [openNav, setOpenNav] = useState(false);
   const [openLangDesktop, setOpenLangDesktop] = useState(false);
   const [openLangMobile, setOpenLangMobile] = useState(false);
+  const location = useLocation();
 
   const desktopRef = useRef<HTMLDivElement>(null);
   const mobileRef = useRef<HTMLDivElement>(null);
+
+  const getLinkClass = (path: string) => {
+    const isActive = location.pathname === path;
+    return `hover:text-[#EF9314] transition pb-1 ${isActive ? "text-[#EF9314] border-b-2 border-[#EF9314]" : ""}`;
+  };
   // 9 especialista
   // 8 pa bajo sessionS
   // 7 directivos
@@ -44,9 +50,9 @@ export default function Header() {
       <div className="max-w-7xl mx-auto h-[80px] px-6 flex items-center justify-between">
         {/* Left Nav (desktop) */}
         <nav className="hidden md:flex space-x-8 text-gray-800 font-semibold">
-          <Link to="/" className="hover:text-[#EF9314] transition">{t('header.inicio')}</Link>
-          <Link to="/nosotros" className="hover:text-[#EF9314] transition">{t('header.nosotros')}</Link>
-          <Link to="/servicios" className="hover:text-[#EF9314] transition">{t('header.servicios')}</Link>
+          <Link to="/" className={getLinkClass("/")}>{t('header.inicio')}</Link>
+          <Link to="/nosotros" className={getLinkClass("/nosotros")}>{t('header.nosotros')}</Link>
+          <Link to="/servicios" className={getLinkClass("/servicios")}>{t('header.servicios')}</Link>
         </nav>
 
         {/* Logo */}
@@ -56,8 +62,8 @@ export default function Header() {
 
         {/* Right Nav (desktop) */}
         <nav className="hidden md:flex items-center space-x-8 text-gray-800 font-semibold relative">
-          <Link to="/proyectos" className="hover:text-[#EF9314] transition">{t('header.proyectos')}</Link>
-          <Link to="/contacto" className="hover:text-[#EF9314] transition">{t('header.contacto')}</Link>
+          <Link to="/proyectos" className={getLinkClass("/proyectos")}>{t('header.proyectos')}</Link>
+          <Link to="/contacto" className={getLinkClass("/contacto")}>{t('header.contacto')}</Link>
 
           {/* Desktop Language */}
           <div ref={desktopRef} className="relative">

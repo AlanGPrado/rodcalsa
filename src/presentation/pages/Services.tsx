@@ -118,7 +118,7 @@ export default function Services() {
                             src={constructionSite}
                             alt="Construction Site"
                             onLoad={() => setImageLoaded(true)}
-                            className="w-full h-[500px] object-cover hover:scale-105 transition-transform duration-700"
+                            className="w-full h-[400px] object-cover hover:scale-105 transition-transform duration-700"
                         />
                     </motion.div>
 

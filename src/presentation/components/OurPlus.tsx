@@ -31,7 +31,7 @@ export default function NuestroPlus() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-20 bg-gradient-mesh overflow-hidden">
+    <section ref={sectionRef} className="pb-20 bg-gradient-mesh overflow-hidden">
       <div className="max-w-4xl mx-auto px-6 lg:px-12">
         {/* Título */}
         <div className="section-header">
