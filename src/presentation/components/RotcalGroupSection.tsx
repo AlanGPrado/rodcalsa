@@ -113,7 +113,7 @@ export default function RotcalGroupSection() {
 
             <div className="flex justify-center w-full mt-12 mb-6 pointer-events-none relative z-10">
                 <div className="max-w-2xl bg-white rounded-2xl border-l-4 border-[#EF9314] shadow-sm px-8 py-6 pointer-events-auto">
-                    <p className="font-medium text-gray-800 italic text-center text-lg">
+                    <p className="font-medium text-gray-800 italic text-left text-lg">
                         "{t('about.rodcalGroup.description3')}"
                     </p>
                 </div>
